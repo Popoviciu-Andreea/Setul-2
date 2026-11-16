@@ -1,0 +1,40 @@
+﻿using System;
+/*13. O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare 
+sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive (rotire 
+cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul 
+element devine ultimul). Determinati daca o secventa de n numere este o secventa 
+crescatoare rotita. */
+
+namespace Problema_13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            int nr = 0;
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                if (v[i] > v[i + 1])
+                    nr++;
+
+            }
+            if (v[n - 1] > v[0])
+                nr++;
+            if (nr <= 1)
+                Console.WriteLine($"Secventa este crescatoare rotita");
+            else
+                Console.WriteLine($"Secventa nu este crescatoare rotita");
+
+
+
+        }
+    }
+}
